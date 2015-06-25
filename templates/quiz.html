@@ -1,0 +1,122 @@
+<div style="border-style: outset; border-left:none;border-top:none;padding:5px;padding-top:45px;">
+<div  style="width:auto; padding:5px;">
+    <div class="row label-danger " style="width:auto;font-size:auto;font-style:italic; font-weight:bold; vertical-align:middle; margin-left:1px;margin-right:1px;">
+        <img src="logo.png" style="height:50px;width:100px;"  />
+        &nbsp;&nbsp;
+        <span style="font-size:auto;font-style:italic; font-weight:bold; vertical-align:middle" >
+
+            <b ng-show="mode == 'quiz'">
+                <select style="font-weight:bold; vertical-align : middle" id="quizList" ng-model="quizName" ng-change="loadQuiz(quizName)">
+                    <option value="data/1IntroductionToJava.js">Day 1 </option>
+                    <option value="data/2ControlStructures.js">Day 2 </option>
+                    <option value="data/3AbstractClass.js">Day 3 </option>
+                </select>
+            </b>
+            <textarea readonly="readonly" class="btn-danger" ng-model="quiz.name" style="font-weight:bold; resize:none;vertical-align:middle; text-align:center;size :auto" rows="2" cols="25"></textarea>           
+        </span>
+    </div>
+    <!--        <div class="header-left">
+                <img src="logo.png" style="padding:5px;height:75px;width:125px;"  />
+            </div>&nbsp;&nbsp;&nbsp;
+            <span class="header-left well" style="padding:5px;background-color:#e1edf7 " ng-show="mode == 'quiz'">
+                 In actual application, you may wish to load the quiz List using angular service. 
+                <b>Select Day &nbsp;:&nbsp;
+                    <select style="font-size:13px;" id="quizList" ng-model="quizName" ng-change="loadQuiz(quizName)">
+                        <option value="data/1IntroductionToJava.js">Day 1 </option>
+                        <option value="data/2ControlStructures.js">Day 2 </option>
+                        <option value="data/3AbstractClass.js">Day 3 </option>  
+                    </select> 
+            </span>-->
+
+    <!--        <div class="label label-danger" style="font-size:30px;font-style:italic" ng-show="mode == 'quiz' || mode == 'review' || mode == 'result'">
+                {{quiz.name}}
+            </div>-->
+
+
+    <div id="quiz">
+        <div ng-show="mode == 'quiz'">
+            <div ng-repeat="question in filteredQuestions" >
+                <div style="padding-top:5px;padding-bottom:5px;">
+                <div class="label label-success" style="align:center;font-weight:bold;font-size:auto;">Question {{currentPage}} of {{totalItems}}.</div>
+                </div>
+                <div class="question">
+                     <div style="padding-top:5px;padding-bottom:5px;">
+                    {{currentPage}}. {{question.Name}}
+                     </div>
+                    <div class="options">
+                        <div ng-repeat="option in question.Options">
+                            <label for="{{option.Id}}">
+                                <input id="{{option.Id}}" type="checkbox" ng-model="option.Selected" ng-change="onSelect(question, option);" />
+                                {{option.Name}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quizNav well-sm" style="vertical-align:middle;width:auto;padding-top:2px; background-color:aliceblue" >
+                <div>
+                    <!--<button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(1);">First</button>-->
+                    <button   class="btn btn-primary btn-xs" ng-init ="prevIsDisabled = true" ng-disabled="prevIsDisabled" ng-show="config.allowBack" ng-click="goTo(currentPage - 1);">Prev</button>
+
+                    <button class="btn btn-primary btn-xs" ng-disabled="nextIsDisabled"ng-click="goTo(currentPage + 1);">Next</button>
+                    <!--                <button class="btn btn-default" ng-show="config.allowBack" ng-click="goTo(totalItems);">Last</button>-->
+                    <span style="text-align:center;padding-top:5px;size:auto" ng-show="mode != 'result'">
+                        <!--        <button class="btn btn-primary" ng-click="mode = 'quiz'">Quiz</button> -->
+                        <button class="btn btn-danger btn-xs" ng-show="showReview" ng-click="mode = 'review';
+                            //showSubmitButton();
+                            showSubmit = true;
+                            showReview = false;">Review</button> 
+                        <!--        <button class="btn btn-danger small" ng-init ="quizMessage = 'Take Next Day Quiz!'" ng-show="showSubmit" ng-click="onSubmit();">Submit</button>-->
+                        <button class="btn btn-danger btn-xs" ng-init ="quizMessage = 'Take Next Day Quiz!'" ng-show="showSubmit" ng-click="onSubmit();">Submit</button>
+                    </span>
+                </div>
+                <!-- Disabling Pagination
+                <pagination ng-show="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination> -->
+            </div>
+        </div>
+        <div class="review well " style="text-align:center" ng-show="mode == 'review'">
+            <div ng-repeat="question in questions">
+                <div ng-click="goTo($index + 1)" class="{{ isAnswered($index) == 'Answered' ? 'answered' : 'not-answered'}}">{{$index + 1}}. {{ isAnswered($index)}}</div>
+            </div>
+            <br>
+            <div>
+             <button class="btn btn-danger btn-xs" ng-init ="quizMessage = 'Take Next Day Quiz!'" ng-show="showSubmit" ng-click="onSubmit();">Submit</button>
+            </div>
+        </div>
+        <div class="result" ng-show="mode == 'result'" style="width:auto;padding:10px;">
+            <div class="label label-success " style="font-weight:bold;align:center;">Quiz Result</div>
+            <div ng-repeat="question in questions">
+                <div class="result-question well" style="background-color:#e1edf7">
+                    {{$index + 1}}. {{question.Name}}
+                    <div class="result-options">
+                        <div ng-repeat="Option in question.Options">
+                            <label ng-click="onSelect(Option);" class="{{ (Option.Selected == Option.IsAnswer) ? 'result-correct' : 'result-incorrect'}}">
+                                <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" ng-model="Option.Selected" />
+                                {{Option.Name}}
+                            </label>
+                        </div>
+                    </div>
+                    <div style="padding:1px;" class="alert {{ isCorrect(question) == 'correct' ? 'alert-success' : 'alert-danger'}}">Your answer is {{isCorrect(question)}}! {{question.Description}}</div>
+                </div>
+                <br>
+            </div>
+            <div class="well " style="text-align:center;font-weight:bold;">
+                <button class="btn btn-danger btn-xs" ng-click="mode = 'quiz';
+                    swapQuiz();
+                    loadQuiz(quizName);
+                    prevIsDisabled = true;
+                    nextIsDisabled = false;
+                    showReview = false;
+                    showSubmit = false;">{{quizMessage}}</button>
+            </div>
+            </br>
+        </div>
+        <!--    <div class = "well" style="text-align:center;padding-top:5px;size:auto" ng-show="mode != 'result'">
+                <button class="btn btn-primary" ng-click="mode = 'quiz'">Quiz</button> 
+                <button class="btn btn-danger small" ng-show="showReview" ng-click="mode = 'review';
+                    showReview = false;">Review</button> 
+                <button class="btn btn-danger small" ng-init ="quizMessage = 'Take Next Day Quiz!'" ng-show="showSubmit" ng-click="onSubmit();">Submit</button>
+            </div>-->
+    </div>
+</div>
+</div>

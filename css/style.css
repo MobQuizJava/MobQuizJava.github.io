@@ -1,0 +1,234 @@
+﻿body {
+    //font-family: 'Segoe UI', sans-serif;
+    margin:auto;
+    max-width:95%;
+    width:1000px;
+    //border: 2px solid #000000;
+}
+
+
+*{
+    border-radius:0px !important;
+}
+
+h1{
+    font-size:30px;
+    font-weight:normal;
+}
+h2{
+    //font-size:30px;
+    font-size:auto;
+    font-weight:normal;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #ccc;
+    background:none;
+    margin-bottom:1px;
+}
+.header-right{  
+    //padding-top:6px;
+    text-align:right;
+    padding-right:50px;
+}
+.header-left{
+    //padding-top:6px;
+    text-align:left;
+    padding-left:20px;
+}
+
+.center{
+    text-align:center;
+}
+.right{
+    text-align:right;
+}
+
+.question{
+    background-color: whitesmoke;
+    color:#151569;
+    min-height:auto;
+    padding:1px;
+    text-align:left;
+     //font-size: 30px;
+     font-size:auto;
+}
+.question h2{
+    //font-size:30px;
+    font-size:auto;
+    font-weight:normal;
+     //font-size: 30px;
+     font-size:auto;
+}
+
+#quiz .options {
+    //margin: auto;
+    //max-width: 800px;
+    text-align: left;
+    //font-size:12px;
+    font-size:auto;
+}
+#quiz .options > div{
+    //display:inline-block;
+}
+    #quiz .options > div > label {
+        //background-color:whitesmoke  ;
+        color: black;
+        cursor: pointer;
+        //display: block;
+            //font-family: 'Segoe UI', Calibri, Arial;
+            //font-weight:600;
+        text-align: left;
+        //font-size: 30px;
+        font-size:auto;
+        font-weight:normal;
+        //margin: 2px;
+        //min-width: 512px;
+        //padding: 2px 2px;
+        vertical-align: top;
+    }
+
+    #quiz .options input[type=checkbox] {
+        background-color:#eee;
+        border:1px solid #ccc;
+        //height:20px;
+        //width:20px;
+    }
+
+    .quizNav {
+        margin:auto;
+        text-align:center;
+    }
+    .quizNav ul{
+        margin:0;
+    }
+
+
+    .quizNav ul li{
+        //display:inline-block;
+        //list-style-type:none;
+    }
+    
+div.review{
+    text-align:center;
+}
+div.review > div {
+    cursor:pointer;
+    display:inline-block;
+    margin:2px;
+    padding:5px;
+    //width: 25%;
+}
+
+.answered {
+    background-color:#ccffcc;
+    border:1px solid #aaeeaa;
+    padding:6px;
+}
+
+.not-answered {
+    background-color:#ffcccc;
+    border:1px solid #eeaaaa;
+    padding:6px;
+}
+
+.result{
+  background-color: whitesmoke;
+    color:#151569;
+    min-height:100px;
+    padding:1px;
+    text-align:left;
+     //font-size: 30px;
+     font-size:auto;
+}
+
+.result-question{
+    background-color:#eee;
+    margin:4px;
+    padding:0px;
+    //font-size: 30px;
+    font-size:auto;
+}
+.result-question h3 {
+    //font-size:30px;
+    font-size:auto;
+    font-weight:normal;
+}
+#quiz .result-options {
+    margin: auto;
+    max-width: auto;
+    text-align: left;
+    //font-size:30px;
+    font-size:auto;
+}
+#quiz .result-options > div{
+    display:inline-block;
+    //font-size:14px;
+    font-size:auto;
+}
+    #quiz .result-options > div > label {
+        //background-color: #ccd2dc;
+        //color: #224;
+        cursor: pointer;
+        //display: block;
+        //font-family: 'Segoe UI', Calibri, Arial;
+        font-weight:normal;
+        margin: 5px;
+        text-align: left;
+        //font-size: 14px;
+        font-size:auto;
+        //margin: 6px;
+        //min-width: 300px;
+        //padding: 6px 12px;
+        vertical-align: middle;
+    }
+
+    #quiz .result-options input[type=checkbox] {
+        background-color:#eee;
+        border:1px solid #ccc;
+        height:16px;
+        width:16px;
+        //font-size:13px;
+        font-size:auto;
+    }
+
+    .result-correct{
+       // background-color: #62f462;
+    }
+    
+    .result-incorrect{
+        /*background-color: #f79b60;*/
+    }
+
+    
+/* Create Quiz Styles */
+.create-quiz .question {
+    text-align:left;
+}
+.create-quiz input[type=text]{
+    border:1px solid #ddd;
+    width:95%;
+}
+.create-quiz .tb-quiz-name{
+    background-color:#ccffcc;
+    text-align:left;
+}
+
+.create-quiz .tb-desc{
+    background-color:#fff;
+}
+
+.create-quiz .options > div{
+    margin-left:30px;
+}
+.create-quiz .options input[type=checkbox]{
+    border: 1px solid #262626;
+    display: inline-block;
+    height:30px;
+    margin-top:10px;
+    margin-bottom:0;
+    padding:0;
+    width:30px;
+    -webkit-appearance:checkbox;    
+}
