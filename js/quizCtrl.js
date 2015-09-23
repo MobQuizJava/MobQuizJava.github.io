@@ -181,13 +181,17 @@
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/3AbstractClass.js') {
                 $scope.quizName = 'data/4Exceptions.js';
-                $scope.quizMessage = 'You have completed the Last Day Quiz!';
+                $scope.quizMessage = 'Take Next Day Quiz!';
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/4Exceptions.js') {
+                $scope.quizName = 'data/5Multithreading.js';
+                $scope.quizMessage = 'You have completed the Last Day Quiz!';
+                //alert($scope.quizMessage);
+            } else if ($scope.quizName == 'data/5Multithreading.js') {
                 $scope.quizName = 'data/1IntroductionToJava.js';
                 $scope.quizMessage = 'Take Next Day Quiz!';
                 //alert($scope.quizMessage);
-            } 
+            }  
             ;
 
         };
