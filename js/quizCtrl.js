@@ -149,7 +149,26 @@
             return result;
         };
 
-        $scope.swapQuiz = function () {
+ //       $scope.swapQuiz = function () {
+            //alert($scope.showSubmit);
+   //         if ($scope.quizName == 'data/1IntroductionToJava.js') {
+     //           $scope.quizName = 'data/2ControlStructures.js';
+       //         $scope.quizMessage = 'Take Next Day Quiz!';
+         //       //alert($scope.quizMessage);
+    //        } else if ($scope.quizName == 'data/2ControlStructures.js') {
+    //            $scope.quizName = 'data/3AbstractClass.js';
+     //           $scope.quizMessage = 'You have completed the Last Day Quiz!'
+      //          //alert($scope.quizMessage);
+      //      } else if ($scope.quizName == 'data/3AbstractClass.js') {
+        //        $scope.quizName = 'data/1IntroductionToJava.js';
+          //      $scope.quizMessage = 'Take Next Day Quiz!';
+            //    //alert($scope.quizMessage);
+    //        }
+    //        ;
+
+    //    };
+
+            $scope.swapQuiz = function () {
             //alert($scope.showSubmit);
             if ($scope.quizName == 'data/1IntroductionToJava.js') {
                 $scope.quizName = 'data/2ControlStructures.js';
@@ -157,13 +176,18 @@
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/2ControlStructures.js') {
                 $scope.quizName = 'data/3AbstractClass.js';
-                $scope.quizMessage = 'You have completed the Last Day Quiz!'
+                //$scope.quizMessage = 'You have completed the Last Day Quiz!'
+                $scope.quizMessage = 'Take Next Day Quiz!';
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/3AbstractClass.js') {
+                $scope.quizName = 'data/4Exceptions.js';
+                $scope.quizMessage = 'You have completed the Last Day Quiz!';
+                //alert($scope.quizMessage);
+            } else if ($scope.quizName == 'data/4Exceptions.js') {
                 $scope.quizName = 'data/1IntroductionToJava.js';
                 $scope.quizMessage = 'Take Next Day Quiz!';
                 //alert($scope.quizMessage);
-            }
+            } 
             ;
 
         };
