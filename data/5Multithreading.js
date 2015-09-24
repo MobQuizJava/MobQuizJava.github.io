@@ -18,7 +18,7 @@
         },
         {
         "Id": 1011,
-                "Name": "Which two are valid constructors for Thread?\\n1. Thread(Runnable r, String name)\\n2. Thread()\\n3. Thread(int priority)\\n4. Thread(Runnable r, ThreadGroup g)\\n5. Thread(Runnable r, int priority)",
+                "Name": "Which two are valid constructors for Thread?\n1. Thread(Runnable r, String name)\n2. Thread()\n3. Thread(int priority)\n4. Thread(Runnable r, ThreadGroup g)\n5. Thread(Runnable r, int priority)",
                 "QuestionTypeId": 1,
                 "Options": [
                 { "Id": 1055, "QuestionId": 1010, "Name": "1 and 3", "IsAnswer": false },
