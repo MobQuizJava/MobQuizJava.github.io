@@ -97,10 +97,11 @@
 
         //If you wish, you may create a separate factory or service to call loadQuiz. To keep things simple, i have kept it within controller.
         $scope.loadQuiz = function (file) {
-            console.log(file);
+            alert('About to load the quiz');
             $http.get(file)
                     .then(function (res) {
                         $scope.quiz = res.data.quiz;
+                        alert($scope.quiz);
                         $scope.config = helper.extend({}, $scope.defaultConfig, res.data.config);
                         $scope.questions = $scope.config.shuffleQuestions ? helper.shuffle(res.data.questions) : res.data.questions;
                         $scope.totalItems = $scope.questions.length;
