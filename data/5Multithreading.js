@@ -30,16 +30,7 @@
         },
         {
         "Id": 1012,
-                "Name": "Which three are methods of the Object class?
-1.      notify();
-2.      notifyAll();
-3.      isInterrupted();
-4.      synchronized();
-5.      interrupt();
-6.      wait(long msecs);
-7.      sleep(long msecs);
-8.      yield();
-",
+                "Name": "Which three are methods of the Object class?\\n1. notify();\\n2. notifyAll();\\n3. isInterrupted();\\n4. synchronized();\\n5. interrupt();\\n6. wait(long msecs);\\n7. sleep(long msecs);\\n8. yield();",
                 "QuestionTypeId": 1,
                 "Options": [
                 { "Id": 1055, "QuestionId": 1010, "Name": "1, 2, 4", "IsAnswer": false },
@@ -63,13 +54,7 @@
         },
         {
         "Id": 1014,
-                "Name": "Which two of the following methods are defined in class Thread?
-1.      start()
-2.      wait()
-3.      notify()
-4.      run()
-5.      terminate()
-",
+                "Name": "Which two of the following methods are defined in class Thread?\\n1. start()\\n2. wait()\\n3. notify()\\n4. run()\\n5. terminate()",
                 "QuestionTypeId": 1,
                 "Options": [
                 { "Id": 1055, "QuestionId": 1010, "Name": "1 and 4", "IsAnswer": true },
@@ -117,10 +102,7 @@
         },
         {
         "Id": 1018,
-                "Name": "Assume the following method is properly synchronized and called from a thread A on an object B:
-wait(2000);
-After calling this method, when will the thread A become a candidate to get another turn at the CPU?
-",
+                "Name": "Assume the following method is properly synchronized and called from a thread A on an object B:\\nwait(2000);\\nAfter calling this method, when will the thread A become a candidate to get another turn at the CPU?",
                 "QuestionTypeId": 1,
                 "Options": [
                 { "Id": 1055, "QuestionId": 1010, "Name": "After thread A is notified, or after two seconds.", "IsAnswer": true },
