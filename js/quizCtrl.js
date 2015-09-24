@@ -184,7 +184,8 @@
                 $scope.quizMessage = 'Take Next Day Quiz!';
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/4Exceptions.js') {
-                $scope.quizName = 'data/5Multithreading.js';
+                //$scope.quizName = 'data/5Multithreading.js';
+                $scope.quizName = 'data/2ControlStructures.js';
                 $scope.quizMessage = 'You have completed the Last Day Quiz!';
                 //alert($scope.quizMessage);
             } else if ($scope.quizName == 'data/5Multithreading.js') {
