@@ -97,6 +97,7 @@
 
         //If you wish, you may create a separate factory or service to call loadQuiz. To keep things simple, i have kept it within controller.
         $scope.loadQuiz = function (file) {
+            console.log(file);
             $http.get(file)
                     .then(function (res) {
                         $scope.quiz = res.data.quiz;
